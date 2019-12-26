@@ -56,10 +56,11 @@ public:
     this->size = 1;
   };
   
-  //Returning the top and the end data (Incase we need it)
+  //Returning the top and the end data&&||node (Incase we need it)
 	T getTop() { return this->head->data; };
 	T getEnd() { return this->tail->data; };
-  
+	node<T>* returnTop(){ return this->head;};
+	node<T>* returnEnd(){	return this->tail;};
   
 	//Push node to Linklist (ADDS TO FRONT)
 	void pushNode(T data){
