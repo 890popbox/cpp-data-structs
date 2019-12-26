@@ -43,14 +43,14 @@ protected:
 public:
   
   //DEFAULT CONSTRUCTOR, CREATES LIST, EVERYTHING IS NULL, NO SIZE
-	LinkedList(){ 
+  LinkedList(){ 
     this->head = NULL;
     this->tail = NULL;
     this->size = 0;
   };
   
   //WORKING CONSTRUCTOR, CREATES LINKLIST WITH ONE ITEM
-	LinkedList(T data){	node<T> *tmp = new node<T>(data);
+  LinkedList(T data){	node<T> *tmp = new node<T>(data);
     this->head = tmp;
     this->tail = this->head;
     this->size = 1;
@@ -62,9 +62,9 @@ public:
 	node<T>* returnTop(){ return this->head;};
 	node<T>* returnEnd(){	return this->tail;};
   
-	//Push node to Linklist (ADDS TO FRONT)
-	void pushNode(T data){
-     //Check if null
+  //Push node to Linklist (ADDS TO FRONT)
+  void pushNode(T data){
+  //Check if null
     if (this->head == NULL) { //Only one item
       this->head = new node<T>(data);
       this->tail = this->head; //Points to itself..
@@ -87,8 +87,8 @@ public:
   };
   
   
-	//Add to the linklist (ADDS TO END)
-	void addNode(T data){
+  //Add to the linklist (ADDS TO END)
+  void addNode(T data){
     //Check if null
     if (this->head == NULL) {
       this->head = new node<T>(data);
@@ -114,8 +114,8 @@ public:
   };
   
   
-	//Insert data to the index given
-	void insertNode(T data, int index){
+  //Insert data to the index given
+  void insertNode(T data, int index){
      //No need to rewrite code
     int siz = this->size;
     //Do nothing if too far
@@ -144,9 +144,9 @@ public:
 	}};
   
 
-	//Delete node at an index, End or front..
+  //Delete node at an index, End or front..
   //3 CASES, FRONT, MIDDLE, BACK.. 4 IF YOU COUNT TOO HIGH/LOW..
-	void deleteNodeAt(int index){
+  void deleteNodeAt(int index){
     //No need to rewrite code
     int siz = this->size;
     //Do nothing if too far
@@ -195,7 +195,7 @@ public:
   };
   
   //Find the position it is at, then calls above function passing in it's index.
-	void deleteNode(T data){
+  void deleteNode(T data){
     //Create a pointer..
     node<T>* ptr = this->head;
     if (ptr->data == data) { this->deleteNodeAt(0);}
@@ -213,16 +213,16 @@ public:
     }; //Search for T and delete that
 
 
-    //Instead of inserting let's replace..
-    void replaceNode(T data, int index){
-  //I'm just going to call what I made already..
-  //Best to make this it's function to run in O(n) and not have to run two O(n) solutions..
-    this->insertNode(data, index);
-    this->deleteNode(index + 1);
+  //Instead of inserting let's replace..
+	  void replaceNode(T data, int index){
+	  //I'm just going to call what I made already..
+	  //Best to make this it's function to run in O(n) and not have to run two O(n) solutions..
+	    this->insertNode(data, index);
+	    this->deleteNode(index + 1);
   };
   
-	//Does this node exist?
-	bool findNode(T data){
+//Does this node exist?
+  bool findNode(T data){
     //Create ptr to the head
     node<T>* ptr= this->head;
     while (ptr != tail) {
@@ -235,8 +235,8 @@ public:
   }; 
   
   
-	//Count the linklist nodes and return the int (NOT NEEDED IF WE KEEP TRACK OF SIZE, JUST SHOWING HOW THIS WORKS)
-	int countNodes(){
+  //Count the linklist nodes and return the int (NOT NEEDED IF WE KEEP TRACK OF SIZE, JUST SHOWING HOW THIS WORKS)
+  int countNodes(){
         if (this->head == NULL) { return 0; }
         else { //We know one thing exists
         int count = 1;
@@ -249,11 +249,11 @@ public:
         return count;
       }
   };
-	int returnSize(){	return (int)this->size; };
+  int returnSize(){return (int)this->size; };
   
 
-	//Reverse the linklist (FOR DOUBLYLINKLIST, BASED OFF SINGLY ALGO)
-	void reverse(){
+  //Reverse the linklist (FOR DOUBLYLINKLIST, BASED OFF SINGLY ALGO)
+  void reverse(){
       //We must store pointers
       node<T>* current = this->head;
       node<T>* tmp = NULL;
@@ -280,13 +280,11 @@ public:
       this->tail = current;
   };
   
+  //Check if list is empty
+  bool isEmpty(){ return this->size == 0; };
   
-	//Check if list is empty
-	bool isEmpty(){	return this->size == 0; };
-  
-  
-	//Print the linklist contents
-	void print() {
+  //Print the linklist contents
+  void print() {
         node<T>* tmp = head;
         while (tmp != tail) {
         std::cout << tmp->data << " ";
