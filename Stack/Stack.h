@@ -23,29 +23,29 @@ private:
 public:
 
   //THIS METHOD WILL PUSH YOUR DATA TO THE END OF THE LIST
-	void push(T data){ 	this->container->addNode(data); };
+	void push(T data){ this->container->addNode(data); };
   
   //DELETES AND RETURNS THE DATA FROM THE TOP OF THE STACK
 	T pop(){	
     //Save a tmp and delete it, return that
-    if (this->isEmpty()) {
+    if (this->container->isEmpty()) {
       cout << "Can't pop an empty Stack" << endl;
       return T();
     }
     else {
-      T tmp = this->returnEnd()->data;
-      this->deleteNodeAt(this->size - 1);
+      T tmp = this->container->returnEnd()->data;
+      this->container->deleteNodeAt(this->size - 1);
       return tmp;
 	}};
   
   //RETURNS THE DATA FROM THE TOP OF THE STACK
 	T peek(){
-        if (this->isEmpty()) {
+        if (this->container->isEmpty()) {
         cout << "Can't peek an empty Stack" << endl;
         return T();
       }
       else {
-        return this->returnEnd()->data;
+        return this->container->returnEnd()->data;
       }
   };
 };
