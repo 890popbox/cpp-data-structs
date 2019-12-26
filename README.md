@@ -1,2 +1,5 @@
 # cpp-data-structs
-A few basic structures not using that structures library
+A few basic structures created not using that structures library
+
+
+(Also a test repo)
