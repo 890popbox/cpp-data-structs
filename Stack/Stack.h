@@ -1,4 +1,5 @@
-//Basic  Stack Class
+//Basic Stack Class (LIFO)
+//LAST IN FIRST OUT
 
 #ifndef STACKY1
 #define STACKY1
@@ -22,7 +23,7 @@ private:
 ////PUBLIC METHODS////
 public:
 
-  //THIS METHOD WILL PUSH YOUR DATA TO THE END OF THE LIST
+  //THIS METHOD WILL PUSH YOUR DATA TO THE TOP OF THE STACK
 	void push(T data){ this->container->addNode(data); };
   
   //DELETES AND RETURNS THE DATA FROM THE TOP OF THE STACK
@@ -49,4 +50,5 @@ public:
       }
   };
 };
+
 #endif
