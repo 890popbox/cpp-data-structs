@@ -31,7 +31,7 @@ private:
 	int vec_size = 0;
 
 ////PRIVATE METHODS////
-
+	
 //This void function takes input given in order to create your vector with the size given, defaults at 5
 
 	void createVec(int siz) {
