@@ -26,6 +26,7 @@ struct node {
 	node(T val) { this->data = val; };
 };
 
+//A Basic BST
 template<typename T>
 class BinaryTree {
 protected:
@@ -50,37 +51,37 @@ private:
 		//let's continue if not null but same value also.. for this one
 	}
 	//remove stuff
-	void removeNode(T data, node<T>*& ptr, int &count) {
+	void removeNode(T data, node<T>*& ptr) {
 		//base case
 		if (ptr == NULL) {
 			return;
 		}
 		//figure out which way to go..
 		else if (ptr->data > data) {
-			removeNode(data, ptr->left, ++count);
+			removeNode(data, ptr->left);
 		}
 		else if (ptr->data < data) {
-			removeNode(data, ptr->right, ++count);
+			removeNode(data, ptr->right);
 		}
 		//if both sides are not null, we have to fix that
 		else if (ptr->left != NULL && ptr->right != NULL) {
-			ptr->data = this->findMin(ptr->right, ++count);
-			removeNode(ptr->data, ptr->right, ++count);
+			ptr->data = this->findMin(ptr->right);
+			removeNode(ptr->data, ptr->right);
 		}
 		else {
 			node<T>* oldNode = ptr;
-			//replace
+			//check left first than right, null is fine we just want what exists
 			ptr = (ptr->left != NULL) ? ptr->left : ptr->right;
 			delete oldNode; this->size--;
 		}
 	}
 	//Find the min and return it
-	T findMin(node<T>* root, int &count)
+	T findMin(node<T>* root)
 	{
 		if (root->left == NULL)
 			return root->data;
 		else
-			return findMin(root->left, ++count);
+			return findMin(root->left);
 	}
 	//Find the max and return it
 	T findMax(node<T>* root)
@@ -143,7 +144,7 @@ public:
 	void addNode(T data) { this->addNode(data, this->root); };
   
 	//Remove the first instance of that node (If multiple same values only first one would be deleted.
-	void removeNode(T data, int &count) { this->removeNode(data, this->root, count); };
+	void removeNode(T data) { this->removeNode(data, this->root); };
   
 	//Check if data exists, return bool value based off that 
 	bool contains(T data) { return this->contains(data, this->root); }
@@ -152,7 +153,7 @@ public:
 	node<T>* retrieveNode(T data) { this->findNode(data, this->root); };
   
 	//Recursive method to get the lowest and highest value
-	T findMin(int &count) { return this->findMin(this->root, count); };
+	T findMin() { return this->findMin(this->root); };
 	T findMax() { return this->findMax(this->root); };
   
 	//Easier way to return the size and root of tree, incase other classes need this.
@@ -162,5 +163,4 @@ public:
 	//Printing out the tree for testing purposes
 	void printTree() { this->printTree(this->root); };
 };
-
 #endif
