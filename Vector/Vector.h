@@ -1,6 +1,6 @@
 //THIS FILE IS NOT MEANT TO REPLACE <vector> BUT TO STUDY ITS STRUCTURE AND CREATE A SIMPLE VERISON OF IT
 
-//Recreating the vector, can define with whatever name.. Chris(Moon)
+//Recreating the vector, can define with whatever name..
 //Print functions might not work accurately, can change it up
 #ifndef MOONVEC1
 #define MOONVEC1
