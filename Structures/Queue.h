@@ -23,6 +23,9 @@ private:
 ////PUBLIC METHODS////
 public:
 
+  //WILL HAVE TO CREATE THIS CLASS, CONTAINER SHOULD ALREADY BE CREATED.
+  Queue(){ };
+	
   //THIS METHOD WILL PUSH YOUR DATA TO THE FRONT OF THE QUEUE
 	void enqueue(T data){ this->container->addNode(data); };
   
