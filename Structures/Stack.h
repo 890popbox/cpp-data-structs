@@ -23,6 +23,9 @@ private:
 ////PUBLIC METHODS////
 public:
 
+  //WILL HAVE TO CREATE THIS CLASS, CONTAINER SHOULD ALREADY BE CREATED.
+  Stack(){ };
+
   //THIS METHOD WILL PUSH YOUR DATA TO THE TOP OF THE STACK
 	void push(T data){ this->container->addNode(data); };
   
