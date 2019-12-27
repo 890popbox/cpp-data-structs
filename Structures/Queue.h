@@ -1,5 +1,5 @@
 //Basic Queue Class (FIFO)
-//FIRST IN FIRSTT OUT
+//FIRST IN FIRST OUT
 
 #ifndef QUEUE1
 #define QUEUE1
