@@ -1,0 +1,40 @@
+//Max Occurence of the Highest value and Lowest value in an ASCII String
+
+#include <iostream> 
+#include <string>
+using std::string;
+using std::cout;
+using std::endl;
+
+void maxOccurence(string str) {
+	//empty array for ascii chart
+	int ar[255] = { 0 };
+	int lowest = 256; //start big cause we want to comp smaller values
+	int highest = 0;
+	//loop string length, use the strings character the position.
+	for (unsigned i = 0; i < str.size(); i++) {
+		int pos = (int)str.at(i); //we will be using this value often
+		ar[pos]++;
+		//faster way to keep the lowest
+		if (pos < lowest && pos != 32) {
+			lowest = pos;
+		}
+		//way to keep highest
+		if (pos > highest && pos != 32) {
+			highest = pos;
+		}
+	} //print out the smallest character and how many times it has occured
+	cout << "Printing smallest ASCII character and largest, and it's occurence value\n";
+	cout << char(lowest) << " : " << ar[lowest] << endl;
+	cout << char(highest) << " : " << ar[highest] << endl;
+}
+
+int main()
+{ 
+	maxOccurence("test string !!!!!");
+	maxOccurence("heLLo worLd");
+	maxOccurence("chri$ w@$ here");
+	maxOccurence("red blue Green");
+	maxOccurence("haaashing is fun");
+  return 0;
+}
