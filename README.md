@@ -1,6 +1,6 @@
-# cpp-data-structs
-A few basic structures created not using that structures library
+# cpp-data-structs-algos
 
-Some data types could be changed, such as using unsigned not int.
+A few basic structures created not using that structures library
+A few algorithms as well, basic things that could be changed up
 
 (Also a test repo)
