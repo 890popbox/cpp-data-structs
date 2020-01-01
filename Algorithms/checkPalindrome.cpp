@@ -13,7 +13,9 @@ bool checkPalindrome(string str){
 		while (str.at(j) == ' ') { j--; }
 		//check if it's equal or not, cap/low diff doesn't matter
 		if (tolower(str.at(i)) != tolower(str.at(j))) { return false; }
-    return true;
+	}
+	return true;
+
 }
 
 int main()
