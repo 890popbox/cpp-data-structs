@@ -6,7 +6,7 @@ using std::string;
 using std::cout;
 using std::endl;
 
-bool checkPalindrome(string str)
+bool checkPalindrome(string str){
 	for (unsigned i = 0, j = unsigned(str.size() - 1); i < unsigned(str.size() / 2); i++, j--) {
 		//check if space from both i and j, we don't want spacing.
 		while (str.at(i) == ' ') { i++; }
