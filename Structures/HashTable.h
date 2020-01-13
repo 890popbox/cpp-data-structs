@@ -5,6 +5,8 @@
 //Default template uses string:string, you can use whatever here but it must be static throughout the hashTable
 //This is just an example to see how hashing works, ideally use HashMaps. 
 
+//Ideally for this you'd use Linkedlist, vector/array will be easy for locating index.
+//You'd want the array/vector to hold many Linkedlists, basically your nodes should create a chain somehow.
 
 //In this example a Person's NAME is the KEY, their PHONE ## is the VALUE.
 
